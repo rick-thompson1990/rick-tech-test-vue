@@ -8,8 +8,6 @@ const GET = async ({ url }: { url: string }): Promise<AxiosResponse> => {
 
   const response = await axios(options as AxiosRequestConfig);
 
-  console.log({ GET: response });
-
   return response;
 };
 

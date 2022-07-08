@@ -7,6 +7,7 @@ export const useMatchesStore = defineStore({
   state: () => ({
     loading: <boolean>false,
     matches: <Array<Match>>[] || null,
+    error: <Error | null>null,
   }),
   getters: {
     getMatches: (state) => state.matches,
@@ -16,11 +17,10 @@ export const useMatchesStore = defineStore({
       try {
         this.loading = true;
         const { data } = await GET({ url });
-        console.log({ data });
         this.matches = data;
         this.loading = false;
       } catch (error) {
-        console.log({ error });
+        this.error = <Error>error;
         this.loading = false;
       }
     },
