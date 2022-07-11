@@ -1,8 +1,8 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue';
-import MatchCardTest from '@/components/_common/matchCardTest.vue';
+import MatchCard from '@/components/_common/MatchCard.vue';
 import { MATCH_BASE_URL } from '@/components/_constants/APIurls';
-import { useMatchesStore } from '@/stores/matches.store';
+import { useMatchesStore } from '@/stores/matches';
 
 const store = useMatchesStore();
 
@@ -16,7 +16,7 @@ onMounted(async () => {
 <template>
   <main>
     <div v-for="match in matches" :key="match.id">
-      <MatchCardTest :match="match" />
+      <MatchCard :match="match" />
     </div>
   </main>
 </template>

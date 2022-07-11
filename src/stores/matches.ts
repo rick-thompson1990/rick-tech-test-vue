@@ -9,9 +9,7 @@ export const useMatchesStore = defineStore({
     matches: <Array<Match>>[] || null,
     error: <Error | null>null,
   }),
-  getters: {
-    getMatches: (state) => state.matches,
-  },
+  getters: {},
   actions: {
     async getMatchData({ url }: { url: string }) {
       try {

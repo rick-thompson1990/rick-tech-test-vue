@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-  <div class="flex flex-col p-2">
+  <div class="match flex flex-col p-2">
     {{ match?.game }}
   </div>
 </template>
